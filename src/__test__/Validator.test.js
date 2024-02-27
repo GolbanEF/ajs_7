@@ -22,5 +22,10 @@ test('username [-|_|\\d]$', () => {
 
 test('username \\d{3,}', () => {
   const user = new Validator('evgeny144_golb-ru');
+  expect(user.validateUsername()).toBe('ok');
+});
+
+test('username \\d{4,}', () => {
+  const user = new Validator('evgeny4144_golb-ru');
   expect(user.validateUsername()).toBe('username not valid');
 });

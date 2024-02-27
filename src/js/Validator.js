@@ -5,7 +5,7 @@ export default class Validator {
   
     validateUsername() {
       const rePositive = /^[a-z][\w-]*[a-z]$/i;
-      const reNegative = /\d{3,}/;
+      const reNegative = /\d{4,}/;
       const message = !rePositive.test(this.username.trim()) ? 'username not valid' :
         reNegative.test(this.username.trim()) ? 'username not valid' : 'ok';
   
